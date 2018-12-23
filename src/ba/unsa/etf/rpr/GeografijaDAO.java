@@ -50,7 +50,8 @@ public class GeografijaDAO {
 
     private static void createNewDatabase() {
         String url = "jdbc:sqlite:baza.db";
-        try (Connection conn = DriverManager.getConnection(url)) {
+        try {
+            conn = DriverManager.getConnection(url);
             if (conn != null) {
                 DatabaseMetaData meta = conn.getMetaData();
                 System.out.println("A new database has been created.");
