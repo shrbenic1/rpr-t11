@@ -43,21 +43,13 @@ public class GeografijaDAO {
         }
     }
 
-    private static void createNewDatabase() {
-        String url = "jdbc:sqlite:baza.db";
+    private GeografijaDAO() {
         try {
+            String url = "jdbc:sqlite:baza.db";
             conn = DriverManager.getConnection(url);
-            if (conn != null) {
-                DatabaseMetaData meta = conn.getMetaData();
-                System.out.println("A new database has been created.");
-            }
-        } catch (SQLException e) {
+        } catch(SQLException e) {
             System.out.println(e.getMessage());
         }
-    }
-
-    private GeografijaDAO() {
-
     }
 
     public static GeografijaDAO getInstance() {
