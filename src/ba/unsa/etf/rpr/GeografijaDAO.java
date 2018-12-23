@@ -11,6 +11,10 @@ public class GeografijaDAO {
 
     }
 
+    private GeografijaDAO() {
+
+    }
+
     Grad glavniGrad(String drzava) {
         return null;
     }
