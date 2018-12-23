@@ -17,12 +17,6 @@ public class Grad {
         this.drzava = null;
     }
 
-    public Grad(String naziv, int brojStanovnika) {
-        this.naziv = naziv;
-        this.brojStanovnika = brojStanovnika;
-        this.drzava = null;
-    }
-
     public int getId() {
         return id;
     }

@@ -14,8 +14,31 @@ public class GeografijaDAO {
         instance = new GeografijaDAO();
     }
 
-    private static void insert() {
-
+    private void insert() {
+        Grad pariz = new Grad(1,"Pariz", 2206488);
+        Drzava francuska = new Drzava(1,"Francuska", pariz);
+        pariz.setDrzava(francuska);
+        francuska.setGlavniGrad(pariz);
+        dodajDrzavu(francuska);
+        dodajGrad(pariz);
+        Grad london = new Grad(2, "London", 8825000 );
+        Drzava uk = new Drzava(2, "UK", london);
+        london.setDrzava(uk);
+        uk.setGlavniGrad(london);
+        dodajDrzavu(uk);
+        dodajGrad(london);
+        Grad manchester = new Grad(3,"Manchester", 545500);
+        manchester.setDrzava(uk);
+        dodajGrad(manchester);
+        Grad bec = new Grad(4, "Beč", 1899055);
+        Drzava austrija = new Drzava(3, "Austrija", bec);
+        bec.setDrzava(austrija);
+        austrija.setGlavniGrad(bec);
+        dodajDrzavu(austrija);
+        dodajGrad(bec);
+        Grad graz = new Grad(5, "Graz",280200);
+        graz.setDrzava(austrija);
+        dodajGrad(graz);
     }
 
     private static void createNewTable() {
@@ -47,6 +70,8 @@ public class GeografijaDAO {
         try {
             String url = "jdbc:sqlite:baza.db";
             conn = DriverManager.getConnection(url);
+            createNewTable();
+            insert();
         } catch(SQLException e) {
             System.out.println(e.getMessage());
         }
