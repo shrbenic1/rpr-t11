@@ -89,6 +89,11 @@ public class GeografijaDAO {
     }
 
     Grad glavniGrad(String drzava) {
+        for(Drzava x : drzave) {
+            if(x.getNaziv().equals(drzava)) {
+                return x.getGlavniGrad();
+            }
+        }
         return null;
     }
 
@@ -152,11 +157,6 @@ public class GeografijaDAO {
         } catch (SQLException e) {
            System.out.println(e.getMessage());
         }
-        return null;
-    }
-
-    Grad nadjiGrad(String grad) {
-
         return null;
     }
 }
