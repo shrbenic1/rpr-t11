@@ -9,7 +9,7 @@ public class Grad {
 
     }
 
-    public Grad(int id, String naziv, int brojStanovnika) {
+    public Grad(String naziv, int brojStanovnika) {
         this.naziv = naziv;
         this.brojStanovnika = brojStanovnika;
     }
