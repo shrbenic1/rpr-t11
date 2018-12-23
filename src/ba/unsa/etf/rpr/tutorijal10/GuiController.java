@@ -1,9 +1,7 @@
-package ba.unsa.etf.rpr;
+package ba.unsa.etf.rpr.tutorijal10;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.TextField;
-
-import java.io.File;
 
 public class GuiController {
     public Main main;

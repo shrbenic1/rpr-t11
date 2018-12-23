@@ -1,6 +1,5 @@
-package ba.unsa.etf.rpr;
+package ba.unsa.etf.rpr.tutorijal10;
 
-import java.io.File;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Collections;
