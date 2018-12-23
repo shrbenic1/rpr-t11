@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="301.0" prefWidth="377.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="301.0" prefWidth="377.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rpr.GuiController">
    <center>
       <GridPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="186.0" prefWidth="283.0" BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -25,7 +25,7 @@
             <Button fx:id="obrisiDrzavu" mnemonicParsing="false" onAction="#brisanjeDrzave" prefHeight="25.0" prefWidth="118.0" text="Obriši državu" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <Button fx:id="ispisGradova" mnemonicParsing="false" onAction="#ispisiGradove" prefHeight="25.0" prefWidth="118.0" text="Ispiši gradove" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <Button fx:id="pronadjiDrzavu" mnemonicParsing="false" onAction="#pretragaDrzave" prefHeight="25.0" prefWidth="118.0" text="Pronađi državu" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField fx:id="imeGrada" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="25.0" prefWidth="120.0" promptText="Ime grada" />
+            <TextField fx:id="imeDrzave" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="25.0" prefWidth="120.0" promptText="Ime države" />
             <TextField fx:id="imeDrzave1" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="120.0" promptText="Ime države" GridPane.rowIndex="1" />
             <TextField fx:id="imeDrzave2" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="120.0" promptText="Ime države" GridPane.rowIndex="2" />
          </children>

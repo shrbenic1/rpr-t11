@@ -36,7 +36,6 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
-        System.out.println("Gradovi su:\n" + ispisiGradove());
         launch(args);
     }
 
@@ -44,7 +43,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("gui.fxml"));
         primaryStage.setTitle("Rad s bazom podataka");
-        primaryStage.setScene(new Scene(root, 200, 275));
+        primaryStage.setScene(new Scene(root, 400, 275));
         primaryStage.show();
     }
 }
