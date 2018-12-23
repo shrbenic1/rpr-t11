@@ -41,11 +41,6 @@ public class GeografijaDAO {
         Grad graz = new Grad("Graz",280200);
         graz.setDrzava(austrija);
         dodajGrad(graz);
-        gradovi.add(pariz);
-        gradovi.add(london);
-        gradovi.add(manchester);
-        gradovi.add(bec);
-        gradovi.add(graz);
         drzave.add(francuska);
         drzave.add(uk);
         drzave.add(austrija);
@@ -126,6 +121,7 @@ public class GeografijaDAO {
             statement.setInt(2, grad.getBrojStanovnika());
             statement.setInt(3, grad.getDrzava().getId());
             statement.executeUpdate();
+            gradovi.add(grad);
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
@@ -140,7 +136,17 @@ public class GeografijaDAO {
     }
 
     Drzava nadjiDrzavu(String drzava) {
-
+        Drzava trazenaDrzava = new Drzava();
+        try {
+            PreparedStatement statement = conn.prepareStatement("SELECT id, naziv, glavni_grad FROM drzava WHERE naziv=?");
+            statement.setString(1, drzava);
+            ResultSet resultSet = statement.executeQuery();
+            trazenaDrzava.setNaziv(resultSet.getString(2));
+            trazenaDrzava.setId(resultSet.getInt(1));
+            return trazenaDrzava;
+        } catch (SQLException e) {
+           System.out.println(e.getMessage());
+        }
         return null;
     }
 
