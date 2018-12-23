@@ -1,18 +1,21 @@
 package ba.unsa.etf.rpr;
 
+import java.io.File;
 import java.sql.Connection;
 import java.util.ArrayList;
 
 public class GeografijaDAO {
     private static GeografijaDAO instance = null;
     private static Connection conn;
+    ArrayList<Grad> gradovi;
+    ArrayList<Drzava> drzave;
 
     private static void initialize() {
 
     }
 
     private GeografijaDAO() {
-
+        File file = new File("baza.db");
     }
 
     public static GeografijaDAO getInstance() {
