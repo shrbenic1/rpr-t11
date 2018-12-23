@@ -10,6 +10,13 @@ public class Grad {
 
     }
 
+    public Grad(int id, String naziv, int brojStanovnika, Drzava drzava) {
+        this.id = id;
+        this.naziv = naziv;
+        this.brojStanovnika = brojStanovnika;
+        this.drzava = drzava;
+    }
+
     public Integer getId() {
         return id;
     }
@@ -26,10 +33,19 @@ public class Grad {
         return drzava;
     }
 
-    public Grad(int id, String naziv, int brojStanovnika, Drzava drzava) {
+    public void setId(Integer id) {
         this.id = id;
+    }
+
+    public void setNaziv(String naziv) {
         this.naziv = naziv;
+    }
+
+    public void setBrojStanovnika(Integer brojStanovnika) {
         this.brojStanovnika = brojStanovnika;
+    }
+
+    public void setDrzava(Drzava drzava) {
         this.drzava = drzava;
     }
 }
