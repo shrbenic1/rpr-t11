@@ -98,7 +98,34 @@ public class GeografijaDAO {
     }
 
     void obrisiDrzavu(String drzava) {
-
+        ArrayList<Grad> toRemoveGradovi = new ArrayList<Grad>();
+        ArrayList<Drzava> toRemoveDrzave = new ArrayList<Drzava>();
+        for(Grad x : gradovi) {
+            if(x.getDrzava().getNaziv().equals(drzava)) {
+                toRemoveGradovi.add(x);
+            }
+        }
+        for(Drzava x : drzave) {
+            if(x.getNaziv().equals(drzava)) {
+                toRemoveDrzave.add(x);
+            }
+        }
+        drzave.removeAll(toRemoveDrzave);
+        gradovi.removeAll(toRemoveGradovi);
+        Drzava ciljanaDrzava = nadjiDrzavu(drzava);
+        try {
+            if(ciljanaDrzava == null) {
+                return;
+            }
+            PreparedStatement statement = conn.prepareStatement("DELETE FROM drzava WHERE naziv=?");
+            PreparedStatement statement1 = conn.prepareStatement("DELETE FROM grad WHERE drzava=?");
+            statement1.setInt(1, ciljanaDrzava.getId());
+            statement1.executeUpdate();
+            statement.setString(1, drzava);
+            statement.executeUpdate();
+        } catch(SQLException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     ArrayList<Grad> gradovi() {
