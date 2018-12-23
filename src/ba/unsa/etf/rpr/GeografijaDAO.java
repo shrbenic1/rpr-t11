@@ -146,18 +146,12 @@ public class GeografijaDAO {
     }
 
     Drzava nadjiDrzavu(String drzava) {
-        Drzava trazenaDrzava = new Drzava();
-        try {
-            PreparedStatement statement = conn.prepareStatement("SELECT id, naziv, glavni_grad FROM drzava WHERE naziv=?");
-            statement.setString(1, drzava);
-            ResultSet resultSet = statement.executeQuery();
-            trazenaDrzava.setNaziv(resultSet.getString(2));
-            trazenaDrzava.setId(resultSet.getInt(1));
-            return trazenaDrzava;
-        } catch (SQLException e) {
-           System.out.println(e.getMessage());
-        }
-        return null;
+       for(Drzava x: drzave) {
+           if(x.getNaziv().equals(drzava)) {
+               return x;
+           }
+       }
+       return null;
     }
 }
 
