@@ -10,7 +10,6 @@ public class Drzava {
     }
 
     public Drzava(String naziv, Grad glavniGrad) {
-        this.id = 0;
         this.naziv = naziv;
         this.glavniGrad = glavniGrad;
     }
