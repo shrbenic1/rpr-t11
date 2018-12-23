@@ -3,6 +3,8 @@ package ba.unsa.etf.rpr;
 import java.io.File;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class GeografijaDAO {
     private static GeografijaDAO instance = null;
@@ -103,7 +105,18 @@ public class GeografijaDAO {
     }
 
     ArrayList<Grad> gradovi() {
-        return null;
+        Collections.sort(gradovi, new Comparator<Grad>() {
+            @Override
+            public int compare(Grad grad1, Grad grad2) {
+                if (grad1.getBrojStanovnika() > grad2.getBrojStanovnika()) {
+                    return -1;
+                } else if (grad1.getBrojStanovnika() < grad2.getBrojStanovnika()) {
+                    return 1;
+                }
+                return 0;
+            }
+        });
+        return gradovi;
     }
 
     void dodajGrad(Grad grad) {
