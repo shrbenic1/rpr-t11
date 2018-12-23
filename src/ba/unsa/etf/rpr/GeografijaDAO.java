@@ -1,10 +1,15 @@
 package ba.unsa.etf.rpr;
 
 import java.sql.Connection;
+import java.util.ArrayList;
 
 public class GeografijaDAO {
     private static GeografijaDAO instance = null;
     private static Connection conn;
+
+    private static void initialize() {
+
+    }
 
     Grad glavniGrad(String drzava) {
         return null;
