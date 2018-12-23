@@ -1,9 +1,17 @@
 package ba.unsa.etf.rpr;
 
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Main {
+import static javafx.application.Application.launch;
+
+public class Main extends Application {
 
     public static String ispisiGradove() {
         ArrayList<Grad> gradovi = GeografijaDAO.getInstance().gradovi();
@@ -29,6 +37,14 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("Gradovi su:\n" + ispisiGradove());
-        glavniGrad();
+        launch(args);
+    }
+
+    @Override
+    public void start(Stage primaryStage) throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("gui.fxml"));
+        primaryStage.setTitle("Rad s bazom podataka");
+        primaryStage.setScene(new Scene(root, 200, 275));
+        primaryStage.show();
     }
 }
