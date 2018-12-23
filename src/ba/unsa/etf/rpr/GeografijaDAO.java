@@ -21,27 +21,24 @@ public class GeografijaDAO {
 
     private void insert() {
         Grad pariz = new Grad("Pariz", 2206488);
-        Drzava francuska = new Drzava("Francuska");
-        francuska.setGlavniGrad(pariz);
+        Drzava francuska = new Drzava("Francuska", pariz);
         pariz.setDrzava(francuska);
         dodajGrad(pariz);
         dodajDrzavu(francuska);
-        Grad london = new Grad("London", 8825000);
-        Drzava ujedinjenoKraljevstvo = new Drzava("Ujedinjeno Kraljevstvo");
-        ujedinjenoKraljevstvo.setGlavniGrad(london);
+        Grad london = new Grad("London", 8825000 );
+        Drzava ujedinjenoKraljevstvo = new Drzava("Ujedinjeno Kraljevstvo", london);
         london.setDrzava(ujedinjenoKraljevstvo);
-        dodajGrad(london);
         dodajDrzavu(ujedinjenoKraljevstvo);
+        dodajGrad(london);
         Grad manchester = new Grad("Manchester", 545500);
         manchester.setDrzava(ujedinjenoKraljevstvo);
         dodajGrad(manchester);
         Grad bec = new Grad("Beč", 1899055);
-        Drzava austrija = new Drzava("Austrija");
-        austrija.setGlavniGrad(bec);
+        Drzava austrija = new Drzava("Austrija", bec);
         bec.setDrzava(austrija);
-        dodajGrad(bec);
         dodajDrzavu(austrija);
-        Grad graz = new Grad("Graz", 280200);
+        dodajGrad(bec);
+        Grad graz = new Grad("Graz",280200);
         graz.setDrzava(austrija);
         dodajGrad(graz);
     }
@@ -125,6 +122,19 @@ public class GeografijaDAO {
     }
 
     Grad nadjiGrad(String grad) {
+        try {
+            PreparedStatement statement = conn.prepareStatement("SELECT id, naziv, broj_stanovnika, drzava FROM grad WHERE naziv = ?");
+            statement.setString(1, grad);
+            ResultSet resultSet = statement.executeQuery();
+            if(resultSet.isClosed()) {
+               return null;
+            }
+            while(resultSet.next()) {
+                return new Grad(resultSet.getInt(1), resultSet.getString(2), resultSet.getInt(3));
+            }
+        } catch(SQLException e) {
+            System.out.println(e.getMessage());
+        }
         return null;
     }
 }
