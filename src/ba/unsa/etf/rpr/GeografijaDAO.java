@@ -15,28 +15,28 @@ public class GeografijaDAO {
     }
 
     private void insert() {
-        Grad pariz = new Grad(1,"Pariz", 2206488);
-        Drzava francuska = new Drzava(1,"Francuska", pariz);
+        Grad pariz = new Grad("Pariz", 2206488);
+        Drzava francuska = new Drzava("Francuska", pariz);
         pariz.setDrzava(francuska);
         francuska.setGlavniGrad(pariz);
         dodajDrzavu(francuska);
         dodajGrad(pariz);
-        Grad london = new Grad(2, "London", 8825000 );
-        Drzava uk = new Drzava(2, "UK", london);
+        Grad london = new Grad("London", 8825000 );
+        Drzava uk = new Drzava("UK", london);
         london.setDrzava(uk);
         uk.setGlavniGrad(london);
         dodajDrzavu(uk);
         dodajGrad(london);
-        Grad manchester = new Grad(3,"Manchester", 545500);
+        Grad manchester = new Grad("Manchester", 545500);
         manchester.setDrzava(uk);
         dodajGrad(manchester);
-        Grad bec = new Grad(4, "Beč", 1899055);
-        Drzava austrija = new Drzava(3, "Austrija", bec);
+        Grad bec = new Grad("Beč", 1899055);
+        Drzava austrija = new Drzava("Austrija", bec);
         bec.setDrzava(austrija);
         austrija.setGlavniGrad(bec);
         dodajDrzavu(austrija);
         dodajGrad(bec);
-        Grad graz = new Grad(5, "Graz",280200);
+        Grad graz = new Grad("Graz",280200);
         graz.setDrzava(austrija);
         dodajGrad(graz);
         gradovi.add(pariz);

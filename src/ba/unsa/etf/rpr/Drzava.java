@@ -9,8 +9,7 @@ public class Drzava {
 
     }
 
-    public Drzava(int id, String naziv, Grad glavniGrad) {
-        this.id = id;
+    public Drzava(String naziv, Grad glavniGrad) {
         this.naziv = naziv;
         this.glavniGrad = glavniGrad;
     }
