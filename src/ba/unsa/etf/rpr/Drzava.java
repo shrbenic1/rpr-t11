@@ -1,7 +1,7 @@
 package ba.unsa.etf.rpr;
 
 public class Drzava {
-    private Integer id;
+    private int id;
     private String naziv;
     private Grad glavniGrad;
 
@@ -9,17 +9,17 @@ public class Drzava {
 
     }
 
-    public Drzava(Integer id, String naziv, Grad glavniGrad) {
+    public Drzava(int id, String naziv, Grad glavniGrad) {
         this.id = id;
         this.naziv = naziv;
         this.glavniGrad = glavniGrad;
     }
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
