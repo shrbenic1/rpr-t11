@@ -128,7 +128,13 @@ public class GeografijaDAO {
     }
 
     void dodajDrzavu(Drzava drzava) {
-
+        try {
+            PreparedStatement statement = conn.prepareStatement("INSERT OR REPLACE INTO drzava(naziv, glavni_grad) VALUES(?,null)");
+            statement.setString(1, drzava.getNaziv());
+            statement.executeUpdate();
+        } catch(SQLException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     void izmijeniGrad(Grad grad) {
