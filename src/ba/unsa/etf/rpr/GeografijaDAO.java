@@ -123,5 +123,9 @@ public class GeografijaDAO {
     Drzava nadjiDrzavu(String drzava) {
         return null;
     }
+
+    Grad nadjiGrad(String grad) {
+        return null;
+    }
 }
 
