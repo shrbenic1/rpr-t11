@@ -142,7 +142,22 @@ public class GeografijaDAO {
     }
 
     void izmijeniGrad(Grad grad) {
-
+        try {
+            PreparedStatement statement = conn.prepareStatement("UPDATE grad SET naziv=?, broj_stanovnika=?, drzava=?");
+            statement.setString(1, grad.getNaziv());
+            statement.setInt(2, grad.getBrojStanovnika());
+            statement.setInt(3, grad.getDrzava().getId());
+            ArrayList<Grad> toRemove = new ArrayList<Grad>();
+            for(Grad x : gradovi) {
+                if(x.getNaziv().equals(grad.getNaziv()) || x.getBrojStanovnika() == grad.getBrojStanovnika() || x.getDrzava().equals(grad.getDrzava())) {
+                    toRemove.add(x);
+                }
+            }
+            gradovi.removeAll(toRemove);
+            gradovi.add(grad);
+        } catch(SQLException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     Drzava nadjiDrzavu(String drzava) {
