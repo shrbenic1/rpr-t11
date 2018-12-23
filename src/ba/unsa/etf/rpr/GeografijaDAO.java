@@ -20,6 +20,10 @@ public class GeografijaDAO {
         return instance;
     }
 
+    public static void removeInstance() {
+        instance = null;
+    }
+
     Grad glavniGrad(String drzava) {
         return null;
     }
