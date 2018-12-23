@@ -2,6 +2,7 @@ package ba.unsa.etf.rpr.tutorijal10;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.TextField;
+import net.sf.jasperreports.engine.JRException;
 
 public class GuiController {
     public Main main;
@@ -38,4 +39,13 @@ public class GuiController {
             System.out.println("Tražena država postoji u bazi podataka!");
         }
     }
+
+    public void stampajGradove(ActionEvent actionEvent) {
+        try {
+            new GradoviReport().showReport(GeografijaDAO.getInstance().getConn());
+        } catch (JRException e1) {
+            e1.printStackTrace();
+        }
+    }
+
 }
