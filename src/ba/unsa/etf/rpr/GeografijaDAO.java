@@ -19,8 +19,31 @@ public class GeografijaDAO {
         instance = new GeografijaDAO();
     }
 
-    private  void insert() {
-
+    private void insert() {
+        Grad pariz = new Grad("Pariz", 2206488);
+        Drzava francuska = new Drzava("Francuska");
+        francuska.setGlavniGrad(pariz);
+        pariz.setDrzava(francuska);
+        dodajGrad(pariz);
+        dodajDrzavu(francuska);
+        Grad london = new Grad("London", 8825000);
+        Drzava ujedinjenoKraljevstvo = new Drzava("Ujedinjeno Kraljevstvo");
+        ujedinjenoKraljevstvo.setGlavniGrad(london);
+        london.setDrzava(ujedinjenoKraljevstvo);
+        dodajGrad(london);
+        dodajDrzavu(ujedinjenoKraljevstvo);
+        Grad manchester = new Grad("Manchester", 545500);
+        manchester.setDrzava(ujedinjenoKraljevstvo);
+        dodajGrad(manchester);
+        Grad bec = new Grad("Beč", 1899055);
+        Drzava austrija = new Drzava("Austrija");
+        austrija.setGlavniGrad(bec);
+        bec.setDrzava(austrija);
+        dodajGrad(bec);
+        dodajDrzavu(austrija);
+        Grad graz = new Grad("Graz", 280200);
+        graz.setDrzava(austrija);
+        dodajGrad(graz);
     }
 
     private static void createNewTable() {
