@@ -15,6 +15,11 @@ public class GeografijaDAO {
 
     }
 
+    public GeografijaDAO getInstance() {
+        if(instance == null) initialize();
+        return instance;
+    }
+
     Grad glavniGrad(String drzava) {
         return null;
     }
