@@ -14,33 +14,13 @@ public class GeografijaDAO {
         if (instance == null) {
             createNewDatabase();
             createNewTable();
-            instance.insert();
+            insert();
         }
         instance = new GeografijaDAO();
     }
 
-    private void insert() {
-        Grad pariz = new Grad("Pariz", 2206488);
-        Drzava francuska = new Drzava("Francuska", pariz);
-        pariz.setDrzava(francuska);
-        dodajGrad(pariz);
-        dodajDrzavu(francuska);
-        Grad london = new Grad("London", 8825000 );
-        Drzava ujedinjenoKraljevstvo = new Drzava("Ujedinjeno Kraljevstvo", london);
-        london.setDrzava(ujedinjenoKraljevstvo);
-        dodajDrzavu(ujedinjenoKraljevstvo);
-        dodajGrad(london);
-        Grad manchester = new Grad("Manchester", 545500);
-        manchester.setDrzava(ujedinjenoKraljevstvo);
-        dodajGrad(manchester);
-        Grad bec = new Grad("Beč", 1899055);
-        Drzava austrija = new Drzava("Austrija", bec);
-        bec.setDrzava(austrija);
-        dodajDrzavu(austrija);
-        dodajGrad(bec);
-        Grad graz = new Grad("Graz",280200);
-        graz.setDrzava(austrija);
-        dodajGrad(graz);
+    private static void insert() {
+
     }
 
     private static void createNewTable() {
@@ -118,36 +98,12 @@ public class GeografijaDAO {
     }
 
     Drzava nadjiDrzavu(String drzava) {
-        try {
-            Drzava trazenaDrzava = new Drzava();
-            PreparedStatement statement = conn.prepareStatement("SELECT id, naziv, glavni_grad FROM drzave WHERE naziv = ?");
-            statement.setString(1, drzava);
-            ResultSet resultSet = statement.executeQuery();
-            if(resultSet.isClosed()) {
-                return null;
-            }
-            trazenaDrzava.setId(resultSet.getInt(1));
-            trazenaDrzava.setNaziv(resultSet.getString(2));
-            return trazenaDrzava;
-        } catch(SQLException e) {
-            System.out.println(e.getMessage());
-        }
 
         return null;
     }
 
     Grad nadjiGrad(String grad) {
-        try {
-            PreparedStatement statement = conn.prepareStatement("SELECT id, naziv, broj_stanovnika, drzava FROM grad WHERE naziv = ?");
-            statement.setString(1, grad);
-            ResultSet resultSet = statement.executeQuery();
-            if(resultSet.isClosed()) {
-               return null;
-            }
-            return new Grad(resultSet.getInt(1), resultSet.getString(2), resultSet.getInt(3));
-        } catch(SQLException e) {
-            System.out.println(e.getMessage());
-        }
+
         return null;
     }
 }
