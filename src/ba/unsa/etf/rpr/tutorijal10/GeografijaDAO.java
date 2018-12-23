@@ -15,6 +15,10 @@ public class GeografijaDAO {
         instance = new GeografijaDAO();
     }
 
+    public Connection getConn() {
+        return conn;
+    }
+
     private void insert() {
         Grad pariz = new Grad("Pariz", 2206488);
         Drzava francuska = new Drzava("Francuska", pariz);
