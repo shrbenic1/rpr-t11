@@ -11,11 +11,6 @@ public class GeografijaDAO {
     private ArrayList<Drzava> drzave = new ArrayList<>();
 
     private static void initialize() {
-        if (instance == null) {
-            createNewDatabase();
-            createNewTable();
-            insert();
-        }
         instance = new GeografijaDAO();
     }
 
