@@ -18,7 +18,6 @@ public class Grad {
     }
 
     public Grad(String naziv, int brojStanovnika) {
-        this.id = 0;
         this.naziv = naziv;
         this.brojStanovnika = brojStanovnika;
         this.drzava = null;
