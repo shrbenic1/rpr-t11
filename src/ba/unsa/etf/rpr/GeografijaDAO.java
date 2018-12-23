@@ -118,6 +118,21 @@ public class GeografijaDAO {
     }
 
     Drzava nadjiDrzavu(String drzava) {
+        try {
+            Drzava trazenaDrzava = new Drzava();
+            PreparedStatement statement = conn.prepareStatement("SELECT id, naziv, glavni_grad FROM drzave WHERE naziv = ?");
+            statement.setString(1, drzava);
+            ResultSet resultSet = statement.executeQuery();
+            if(resultSet.isClosed()) {
+                return null;
+            }
+            trazenaDrzava.setId(resultSet.getInt(1));
+            trazenaDrzava.setNaziv(resultSet.getString(2));
+            return trazenaDrzava;
+        } catch(SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
         return null;
     }
 
@@ -129,9 +144,7 @@ public class GeografijaDAO {
             if(resultSet.isClosed()) {
                return null;
             }
-            while(resultSet.next()) {
-                return new Grad(resultSet.getInt(1), resultSet.getString(2), resultSet.getInt(3));
-            }
+            return new Grad(resultSet.getInt(1), resultSet.getString(2), resultSet.getInt(3));
         } catch(SQLException e) {
             System.out.println(e.getMessage());
         }
