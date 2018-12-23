@@ -15,7 +15,7 @@ public class GeografijaDAO {
 
     }
 
-    public GeografijaDAO getInstance() {
+    public static GeografijaDAO getInstance() {
         if(instance == null) initialize();
         return instance;
     }
