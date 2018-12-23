@@ -39,6 +39,15 @@ public class GeografijaDAO {
         Grad graz = new Grad(5, "Graz",280200);
         graz.setDrzava(austrija);
         dodajGrad(graz);
+        gradovi.add(pariz);
+        gradovi.add(london);
+        gradovi.add(manchester);
+        gradovi.add(bec);
+        gradovi.add(graz);
+        drzave.add(francuska);
+        drzave.add(uk);
+        drzave.add(austrija);
+
     }
 
     private static void createNewTable() {
