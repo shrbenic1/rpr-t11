@@ -24,7 +24,7 @@ public class GeografijaDAO {
         dodajDrzavu(francuska);
         dodajGrad(pariz);
         Grad london = new Grad("London", 8825000 );
-        Drzava uk = new Drzava("UK", london);
+        Drzava uk = new Drzava("Velika Britanija", london);
         london.setDrzava(uk);
         uk.setGlavniGrad(london);
         dodajDrzavu(uk);
