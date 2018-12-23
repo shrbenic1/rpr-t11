@@ -47,7 +47,6 @@ public class GeografijaDAO {
         drzave.add(francuska);
         drzave.add(uk);
         drzave.add(austrija);
-
     }
 
     private static void createNewTable() {
@@ -108,7 +107,15 @@ public class GeografijaDAO {
     }
 
     void dodajGrad(Grad grad) {
-
+        try {
+            PreparedStatement statement = conn.prepareStatement("INSERT OR REPLACE INTO grad(naziv, broj_stanovnika, drzava) VALUES(?,?,?)");
+            statement.setString(1, grad.getNaziv());
+            statement.setInt(2, grad.getBrojStanovnika());
+            statement.setInt(3, grad.getDrzava().getId());
+            statement.executeUpdate();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
     }
 
     void dodajDrzavu(Drzava drzava) {
