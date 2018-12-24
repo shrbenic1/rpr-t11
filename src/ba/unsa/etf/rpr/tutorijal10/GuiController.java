@@ -66,7 +66,7 @@ public class GuiController {
     }
 
     public void jezik(ActionEvent actionEvent) {
-        String property = "";
+        String property;
         switch(((MenuItem) actionEvent.getTarget()).getId()) {
             case "bosanski":
                 property = "Translation_bs";
@@ -77,7 +77,10 @@ public class GuiController {
             case "njemacki":
                 property = "Translation_de";
                 break;
-                default: return;
+            case "francuski":
+                property = "Translation_fr";
+                break;
+             default: return;
         }
         Stage stage = (Stage) imeDrzave.getScene().getWindow();
         stage.setTitle(ResourceBundle.getBundle(property).getString("title"));
