@@ -32,4 +32,7 @@ public class GradoviReport extends JFrame {
         this.setVisible(true);
     }
 
+    public void saveReport(String format) {
+        this.saveReport(format);
+    }
 }

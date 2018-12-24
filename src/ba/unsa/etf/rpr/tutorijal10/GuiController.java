@@ -5,9 +5,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import net.sf.jasperreports.engine.JRException;
 
+import java.io.File;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -105,4 +107,17 @@ public class GuiController {
         ispisGradova.setText(ResourceBundle.getBundle(property).getString("ispisiGradove"));
     }
 
+    public void saveAs(ActionEvent actionEvent) {
+        FileChooser fileChooser = new FileChooser();
+        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("XML File (*.xml)", "*.xml");
+        fileChooser.getExtensionFilters().add(extFilter);
+        FileChooser.ExtensionFilter extFilter1 = new FileChooser.ExtensionFilter("PDF (*.pdf)", "*.pdf");
+        fileChooser.getExtensionFilters().add(extFilter1);
+        FileChooser.ExtensionFilter extFilter2 = new FileChooser.ExtensionFilter("DOCX (*.docx)", "*.docx");
+        fileChooser.getExtensionFilters().add(extFilter2);
+        File file = fileChooser.showSaveDialog(new Stage());
+        if (file != null) {
+            new GradoviReport().saveReport(file.getAbsolutePath());
+        }
+    }
 }

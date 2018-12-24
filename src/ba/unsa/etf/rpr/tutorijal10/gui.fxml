@@ -44,7 +44,7 @@
               <menus>
                 <Menu fx:id="file" mnemonicParsing="false" text="%file">
                   <items>
-                        <MenuItem fx:id="saveAs" mnemonicParsing="false" text="%saveAs" />
+                        <MenuItem fx:id="saveAs" mnemonicParsing="false" onAction="#saveAs" text="%saveAs" />
                     <MenuItem fx:id="close" mnemonicParsing="false" text="%close" />
                   </items>
                 </Menu>
