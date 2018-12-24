@@ -26,14 +26,14 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="pronadjiGlavniGrad" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#glavniGrad" text="Pronađi glavni grad" GridPane.columnIndex="1" />
-            <Button fx:id="obrisiDrzavu" mnemonicParsing="false" onAction="#brisanjeDrzave" prefHeight="25.0" prefWidth="118.0" text="Obriši državu" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Button fx:id="ispisGradova" mnemonicParsing="false" onAction="#ispisiGradove" prefHeight="25.0" prefWidth="118.0" text="Ispiši gradove" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Button fx:id="pronadjiDrzavu" mnemonicParsing="false" onAction="#pretragaDrzave" prefHeight="25.0" prefWidth="118.0" text="Pronađi državu" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField fx:id="imeDrzave" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="25.0" prefWidth="120.0" promptText="Ime države" />
-            <TextField fx:id="imeDrzave1" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="120.0" promptText="Ime države" GridPane.rowIndex="1" />
-            <TextField fx:id="imeDrzave2" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="120.0" promptText="Ime države" GridPane.rowIndex="2" />
-            <Button mnemonicParsing="false" onAction="#stampajGradove" prefHeight="25.0" prefWidth="120.0" text="Štampaj" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Button fx:id="pronadjiGlavniGrad" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#glavniGrad" text="%pronadiGlavniGrad" GridPane.columnIndex="1" />
+            <Button fx:id="obrisiDrzavu" mnemonicParsing="false" onAction="#brisanjeDrzave" prefHeight="25.0" prefWidth="118.0" text="%obrisiDrzavu" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button fx:id="ispisGradova" mnemonicParsing="false" onAction="#ispisiGradove" prefHeight="25.0" prefWidth="118.0" text="%ispisiGradove" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Button fx:id="pronadjiDrzavu" mnemonicParsing="false" onAction="#pretragaDrzave" prefHeight="25.0" prefWidth="118.0" text="%pronadiDrzavu" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="imeDrzave" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="25.0" prefWidth="120.0" promptText="%imeGrada" />
+            <TextField fx:id="imeDrzave1" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="120.0" promptText="%imeDrzave" GridPane.rowIndex="1" />
+            <TextField fx:id="imeDrzave2" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="120.0" promptText="%imeDrzave" GridPane.rowIndex="2" />
+            <Button mnemonicParsing="false" onAction="#stampajGradove" prefHeight="25.0" prefWidth="120.0" text="%stampaj" GridPane.columnIndex="1" GridPane.rowIndex="4" />
          </children>
       </GridPane>
    </center>
@@ -42,27 +42,27 @@
          <children>
             <MenuBar>
               <menus>
-                <Menu mnemonicParsing="false" text="File">
+                <Menu mnemonicParsing="false" text="%file">
                   <items>
-                        <MenuItem mnemonicParsing="false" text="Save As" />
-                    <MenuItem mnemonicParsing="false" text="Close" />
+                        <MenuItem mnemonicParsing="false" text="%saveAs" />
+                    <MenuItem mnemonicParsing="false" text="%close" />
                   </items>
                 </Menu>
-                  <Menu mnemonicParsing="false" text="View">
+                  <Menu mnemonicParsing="false" text="%view">
                      <items>
-                        <Menu mnemonicParsing="false" text="Jezik">
+                        <Menu mnemonicParsing="false" text="%jezik">
                           <items>
-                              <MenuItem mnemonicParsing="false" text="Bosanski" />
-                            <MenuItem mnemonicParsing="false" text="Engleski" />
-                              <MenuItem mnemonicParsing="false" text="Njemački" />
-                              <MenuItem mnemonicParsing="false" text="Francuski" />
+                              <MenuItem mnemonicParsing="false" text="%bosanski" />
+                            <MenuItem mnemonicParsing="false" text="%engleski" />
+                              <MenuItem mnemonicParsing="false" text="%njemacki" />
+                              <MenuItem mnemonicParsing="false" text="%francuski" />
                           </items>
                         </Menu>
                      </items>
                   </Menu>
-                <Menu mnemonicParsing="false" text="Help">
+                <Menu mnemonicParsing="false" text="%help">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="About" />
+                    <MenuItem mnemonicParsing="false" text="%about" />
                   </items>
                 </Menu>
               </menus>
