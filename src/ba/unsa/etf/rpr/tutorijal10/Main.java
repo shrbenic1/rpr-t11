@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 import java.util.Scanner;
 
 import static javafx.application.Application.launch;
@@ -41,7 +42,8 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("gui.fxml"));
+        ResourceBundle bundle = ResourceBundle.getBundle("Translation");
+        Parent root = FXMLLoader.load(getClass().getResource("gui.fxml"), bundle);
         primaryStage.setTitle("Rad s bazom podataka");
         primaryStage.setScene(new Scene(root, 400, 275));
         primaryStage.show();
