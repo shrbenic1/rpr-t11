@@ -45,7 +45,7 @@ public class Main extends Application {
         ResourceBundle bundle = ResourceBundle.getBundle("Translation");
         Parent root = FXMLLoader.load(getClass().getResource("gui.fxml"), bundle);
         primaryStage.setTitle("Database example");
-        primaryStage.setScene(new Scene(root, 400, 275));
+        primaryStage.setScene(new Scene(root, 400, 300));
         primaryStage.show();
     }
 }
