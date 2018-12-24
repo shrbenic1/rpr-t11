@@ -74,6 +74,9 @@ public class GuiController {
             case "engleski":
                 property = "Translation_en_US";
                 break;
+            case "njemacki":
+                property = "Translation_de";
+                break;
                 default: return;
         }
         Stage stage = (Stage) imeDrzave.getScene().getWindow();
