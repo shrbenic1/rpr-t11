@@ -107,6 +107,18 @@ public class GuiController {
         ispisGradova.setText(ResourceBundle.getBundle(property).getString("ispisiGradove"));
     }
 
+
+
+    private String getFileExtension(File file) {
+        String name = file.getName();
+        int lastIndexOf = name.lastIndexOf(".");
+        if (lastIndexOf == -1) {
+            return ""; // empty extension
+        }
+        return name.substring(lastIndexOf);
+    }
+
+
     public void saveAs(ActionEvent actionEvent) {
         FileChooser fileChooser = new FileChooser();
         FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("XML File (*.xml)", "*.xml");
@@ -117,7 +129,14 @@ public class GuiController {
         fileChooser.getExtensionFilters().add(extFilter2);
         File file = fileChooser.showSaveDialog(new Stage());
         if (file != null) {
-            new GradoviReport().saveReport(file.getAbsolutePath());
+            GradoviReport gradoviReport = new GradoviReport();
+            try {
+                gradoviReport.saveAs(GeografijaDAO.getConn(),
+                        getFileExtension(file));
+            }
+            catch (Exception ex) {
+                ex.printStackTrace();
+            }
         }
     }
 }

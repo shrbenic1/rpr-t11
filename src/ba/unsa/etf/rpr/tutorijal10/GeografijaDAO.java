@@ -15,7 +15,7 @@ public class GeografijaDAO {
         instance = new GeografijaDAO();
     }
 
-    public Connection getConn() {
+    public static Connection getConn() {
         return conn;
     }
 
@@ -72,6 +72,7 @@ public class GeografijaDAO {
     }
 
     private GeografijaDAO() {
+        conn = null;
         try {
             String url = "jdbc:sqlite:baza.db";
             conn = DriverManager.getConnection(url);
