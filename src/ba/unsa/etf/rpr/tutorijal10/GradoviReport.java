@@ -1,20 +1,14 @@
 package ba.unsa.etf.rpr.tutorijal10;
 
 import java.io.File;
-import java.io.Writer;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.HashMap;
 import javax.swing.JFrame;
-
 import net.sf.jasperreports.engine.*;
-import net.sf.jasperreports.engine.export.JRXmlExporter;
-import net.sf.jasperreports.engine.export.XmlResourceHandler;
 import net.sf.jasperreports.engine.export.ooxml.JRDocxExporter;
-import net.sf.jasperreports.export.SimpleDocxReportConfiguration;
 import net.sf.jasperreports.export.SimpleExporterInput;
 import net.sf.jasperreports.export.SimpleOutputStreamExporterOutput;
-import net.sf.jasperreports.export.XmlExporterOutput;
 import net.sf.jasperreports.swing.JRViewer;
 
 
