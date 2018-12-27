@@ -49,6 +49,10 @@ public class GradoviReport extends JFrame {
                 JasperExportManager.exportReportToPdfFile(print, path);
                 break;
             case ".DOCX":
+                JRDocxExporter exporter = new JRDocxExporter();
+                exporter.setExporterInput(new SimpleExporterInput(print));
+                exporter.setExporterOutput(new SimpleOutputStreamExporterOutput(new File(path)));
+                exporter.exportReport();
                 break;
             case ".XML":
                 break;
