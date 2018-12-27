@@ -1,11 +1,16 @@
 package ba.unsa.etf.rpr.tutorijal10;
 
+import java.io.File;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.HashMap;
 import javax.swing.JFrame;
 
 import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.export.ooxml.JRDocxExporter;
+import net.sf.jasperreports.export.SimpleDocxReportConfiguration;
+import net.sf.jasperreports.export.SimpleExporterInput;
+import net.sf.jasperreports.export.SimpleOutputStreamExporterOutput;
 import net.sf.jasperreports.swing.JRViewer;
 
 
@@ -29,7 +34,7 @@ public class GradoviReport extends JFrame {
         this.setVisible(true);
     }
 
-    public void saveAs(Connection conn, String filePath) throws JRException {
+    public void saveAs(Connection conn, String extension, String path) throws JRException {
         String reportSrcFile = getClass().getResource("/reports/gradovi.jrxml").getFile();
         String reportsDir = getClass().getResource("/reports/").getFile();
         JasperReport jasperReport = JasperCompileManager.compileReport(reportSrcFile);
@@ -39,13 +44,13 @@ public class GradoviReport extends JFrame {
         ArrayList<HashMap<String, Object>> list = new ArrayList<HashMap<String, Object>>();
         list.add(parameters);
         JasperPrint print = JasperFillManager.fillReport(jasperReport, parameters, conn);
-        switch (filePath.toUpperCase()) {
-            case "PDF":
-                JasperExportManager.exportReportToPdfFile(print, filePath);
+        switch (extension.toUpperCase()) {
+            case ".PDF":
+                JasperExportManager.exportReportToPdfFile(print, path);
                 break;
-            case "DOCX":
+            case ".DOCX":
                 break;
-            case "XML":
+            case ".XML":
                 break;
             default:
                 break;

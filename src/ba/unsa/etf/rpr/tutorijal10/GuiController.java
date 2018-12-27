@@ -131,8 +131,8 @@ public class GuiController {
         if (file != null) {
             GradoviReport gradoviReport = new GradoviReport();
             try {
-                gradoviReport.saveAs(GeografijaDAO.getConn(),
-                        getFileExtension(file));
+                gradoviReport.saveAs(GeografijaDAO.getInstance().getConn(),
+                        getFileExtension(file), file.getCanonicalPath());
             }
             catch (Exception ex) {
                 ex.printStackTrace();
