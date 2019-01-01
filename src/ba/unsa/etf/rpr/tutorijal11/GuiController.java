@@ -1,4 +1,4 @@
-package ba.unsa.etf.rpr.tutorijal10;
+package ba.unsa.etf.rpr.tutorijal11;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
@@ -10,7 +10,6 @@ import javafx.stage.Stage;
 import net.sf.jasperreports.engine.JRException;
 
 import java.io.File;
-import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class GuiController {

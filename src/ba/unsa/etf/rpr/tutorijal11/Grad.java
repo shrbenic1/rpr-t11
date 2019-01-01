@@ -1,4 +1,4 @@
-package ba.unsa.etf.rpr.tutorijal10;
+package ba.unsa.etf.rpr.tutorijal11;
 
 public class Grad {
     private int id;
