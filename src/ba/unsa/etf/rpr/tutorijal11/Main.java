@@ -43,7 +43,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         ResourceBundle bundle = ResourceBundle.getBundle("Translation");
-        Parent root = FXMLLoader.load(getClass().getResource("gui.fxml"), bundle);
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/gui.fxml"), bundle);
         primaryStage.setTitle("Database example");
         primaryStage.setScene(new Scene(root, 400, 300));
         primaryStage.show();
